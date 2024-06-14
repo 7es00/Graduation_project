@@ -1,0 +1,617 @@
+
+/* start timeline  */
+.bodyContainer {
+    padding-top: 100px;
+}
+.bodyContainer .trackName {
+    font-size: 4.5rem;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+.Timeline .TimelineHead {
+    padding:  10px;
+    margin: 50px auto;
+    font-size: 3em;
+    font-weight: 400;
+    text-transform: capitalize;
+    background-color: var(--sec_bgc);
+    color: var(--pri_col);
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--gray_bgc);
+}
+.Timeline .TimelineHead .level {
+    width: 25px;
+    height: 25px;
+    margin-left: 40px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+.Timeline .hint { 
+    font-size: 1.3rem;
+    text-align: center;
+    color: var(--muted_col);
+    background-color: var(--gray_bgc);
+}
+.Timeline .TimelineContainer {
+    width: 1200px;
+    padding: 50px 0;
+}
+
+.Timeline .TimelineContainer .TimelineBox {
+    position: relative;
+    width: 600px;
+    min-height: 250px;
+    margin-bottom: 0px;
+    z-index: var(--largest-z-index);
+}
+
+.Timeline .TimelineContainer .TimelineBox::after {
+    position: absolute;
+    content: "";
+    width: 2px;
+    height: 100%;
+    right: -2px;
+    top: 0;
+    background-color: var(--colored-bgc) ;
+}
+.Timeline .TimelineContainer .TimelineBox:first-child:after {
+    top: 50%;
+}
+.Timeline .TimelineContainer .TimelineBox:last-child:after {
+    height: 50%;
+}
+
+.Timeline .TimelineContainer .TimelineBox .TimelineCircle {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    right: -40px;
+    top: 30%;
+    border-radius: 50%;
+    background-color: var(--pri_bgc);
+    border: 1px solid var(--colored-bgc);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    color: var(--sec_col);
+    z-index: 999;
+}
+
+.Timeline .TimelineContainer .TimelineBox:nth-child(even) {
+    margin-left: 50%;
+}
+
+.Timeline .TimelineContainer .TimelineBox:nth-child(even)::after {
+    left: -0px;
+}
+.Timeline .TimelineContainer .TimelineBox:nth-child(even) .TimelineCircle {
+    left: -7%;
+}
+
+.Timeline .TimelineContainer .TimelineBox .TimelineContent {
+    width: 560px;
+    height: 270px;
+    margin-left: 50px;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.Timeline .TimelineContainer .TimelineBox:nth-child(odd) .TimelineContent {
+    margin-left: -2%;
+}
+
+.Timeline .TimelineContainer .TimelineBox .TimelineContent .TimelineContentName {
+    font-size: 2rem;
+    padding: 15px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--pri_col);
+    background-color: var(--gray_bgc);
+    text-transform: capitalize;
+}
+
+.Timeline .TimelineContainer .TimelineBox .TimelineContent .TimelineContentDetails {
+    text-align: center;
+    font-size: 1.2em;
+    color: var(--muted_col);
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+.Timeline .TimelineContainer .TimelineBox .TimelineContent .TimelineContentButton {
+    position: relative;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+.TimelineContentButton button,.TimelineContentButton button::after {
+    padding: 10px 50px;
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: transparent;
+    color :white;
+    position: relative;
+    text-align: center;
+    border: 1px solid var(--colored-bgc);
+    box-shadow: 0px 10px 10px -10px rgb(4, 104, 255);
+    color: var(--sec_col);
+  }
+  
+.TimelineContentButton button::after {
+    --move1: inset(50% 50% 50% 50%);
+    --move2: inset(31% 0 40% 0);
+    --move3: inset(39% 0 15% 0);
+    --move4: inset(45% 0 40% 0);
+    --move5: inset(45% 0 6% 0);
+    --move6: inset(14% 0 61% 0);
+    clip-path: var(--move1);
+    content: 'GLITCH';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: block;
+}
+  
+.TimelineContentButton button:hover::after {
+    animation: glitch_4011 1s;
+    text-shadow: 10 10px 10px black;
+    animation-timing-function: steps(2, end);
+    text-shadow: -3px -3px 0px #097fee, 3px 3px 0px #227dd1;
+    background-color: transparent;
+    border: 3px solid var(--colored-bgc);
+}
+  
+.TimelineContentButton button:hover {
+    text-shadow: -1px -1px 0px #1d92f25b, 1px 1px 0px #4b95e9;
+}
+  
+.TimelineContentButton button:hover {
+    background-color: transparent;
+    border: 1px solid var(--colored-bgc);
+    box-shadow: 0px 10px 10px -10px rgb(0, 102, 255);
+}
+
+.levelContainer {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .tooltipText {
+    visibility: hidden;
+    background-color: var(--colored-bgc);
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 15px;
+    position: absolute;
+    z-index: 1;
+    top: 50%; 
+    transform: translateY(-50%);
+    left: 120%;
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: 1.2rem;
+  }
+  .dark-mode .tooltipText {
+    background-color: var(--pri_bgc);
+  }
+  .levelContainer:hover .tooltipText {
+    visibility: visible;
+    opacity: 1;
+  }
+
+
+@keyframes glitch_4011 {
+    0% {
+      clip-path: var(--move1);
+      transform: translate(0px,-10px);
+    }
+  
+    10% {
+      clip-path: var(--move2);
+      transform: translate(-10px,10px);
+    }
+  
+    20% {
+      clip-path: var(--move3);
+      transform: translate(10px,0px);
+    }
+  
+    30% {
+      clip-path: var(--move4);
+      transform: translate(-10px,10px);
+    }
+  
+    40% {
+      clip-path: var(--move5);
+      transform: translate(10px,-10px);
+    }
+  
+    50% {
+      clip-path: var(--move6);
+      transform: translate(-10px,10px);
+    }
+  
+    60% {
+      clip-path: var(--move1);
+      transform: translate(10px,-10px);
+    }
+  
+    70% {
+      clip-path: var(--move3);
+      transform: translate(-10px,10px);
+    }
+  
+    80% {
+      clip-path: var(--move2);
+      transform: translate(10px,-10px);
+    }
+  
+    90% {
+      clip-path: var(--move4);
+      transform: translate(-10px,10px);
+    }
+  
+    100% {
+      clip-path: var(--move1);
+      transform: translate(0);
+    }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1400px) {
+    .Timeline .TimelineContainer {
+        width: 1150px;
+    }
+    .Timeline .TimelineContainer .TimelineBox {
+        width: 500px;
+    }
+    .Timeline .TimelineContainer .TimelineBox:nth-child(even)::after {
+        left: -0px;
+    }
+    .Timeline .TimelineContainer .TimelineBox:nth-child(odd)::after {
+        left: 570px;
+    }
+    .Timeline .TimelineContainer .TimelineBox .TimelineContent  {
+        width: 100%;
+        height: 220px;
+        margin-left: 75px;
+    }
+    .Timeline .TimelineContainer .TimelineBox:nth-child(odd) .TimelineContent {
+        margin-left: 0px;
+    }
+    .Timeline .TimelineContainer .TimelineBox:nth-child(even) .TimelineCircle  {
+        left: -40px;
+    }
+    .Timeline .TimelineContainer .TimelineBox:nth-child(odd) .TimelineCircle  {
+        left: 530px;
+    }
+    .Timeline .TimelineContainer .TimelineBox .TimelineContent .TimelineContentName {
+        font-size: 1.8rem;
+    }
+    
+    .Timeline .TimelineContainer .TimelineBox .TimelineContent .TimelineContentDetails  {
+        font-size: .9rem;
+    }
+    .TimelineContentButton button,.TimelineContentButton button::after {
+        padding: 5px 20px;
+        font-size: 1rem;
+    }
+}
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+    .Timeline .TimelineContainer {
+        width: 800px;
+    }
+    .Timeline .TimelineContainer .TimelineBox {
+        width: 410px;
+    }
+    .Timeline .TimelineContainer .TimelineBox:nth-child(even)::after {
+        left: 10px;
+    }
+    .Timeline .TimelineContainer .TimelineBox .TimelineContent  {
+        width: 100%;
+        height: 220px;
+        margin-left: 75px;
+    }
+    .Timeline .TimelineContainer .TimelineBox:nth-child(odd) .TimelineContent {
+        margin-left: -60px;
+    }
+    .Timeline .TimelineContainer .TimelineBox:nth-child(even) .TimelineCircle  {
+        left: -30px;
+    }
+    .Timeline .TimelineContainer .TimelineBox .TimelineContent .TimelineContentName {
+        font-size: 1.8rem;
+    }
+    
+    .Timeline .TimelineContainer .TimelineBox .TimelineContent .TimelineContentDetails  {
+        font-size: .9rem;
+    }
+    .TimelineContentButton button,.TimelineContentButton button::after {
+        padding: 5px 20px;
+        font-size: 1rem;
+    }
+}
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    .bodyContainer .trackName {
+        font-size: 3rem;
+        margin: 20px auto;
+    }
+    .Timeline .TimelineHead {
+        font-size: 2rem;
+        margin: 0 auto 20px;
+    }
+    .Timeline .hint {
+        font-size: 1rem;
+    }
+    .Timeline .TimelineContainer {
+        width: 760px;
+    }
+    .Timeline .TimelineContainer .TimelineBox {
+        width: 550px;
+    }
+    .Timeline .TimelineContainer .TimelineBox::after {
+        right: 510px ;
+    }
+    .Timeline .TimelineContainer .TimelineBox:nth-child(even)::after {
+        left: -322px;
+    }
+    .Timeline .TimelineContainer .TimelineBox .TimelineContent  {
+        width: 100%;
+        height: 220px;
+        margin-left: -260px;
+    }
+    .Timeline .TimelineContainer .TimelineBox:nth-child(odd) .TimelineContent {
+        margin-left: 100px;
+    }
+    .Timeline .TimelineContainer .TimelineBox .TimelineCircle {
+        width: 60px;
+        height: 60px;
+        font-size: 1.4rem;
+        left: 10px;
+    }
+    .Timeline .TimelineContainer .TimelineBox:nth-child(even) .TimelineCircle  {
+        left: -350px;
+    }
+    .Timeline .TimelineContainer .TimelineBox .TimelineContent .TimelineContentName {
+        font-size: 1.8rem;
+    }
+    
+    .Timeline .TimelineContainer .TimelineBox .TimelineContent .TimelineContentDetails  {
+        font-size: .9rem;
+        padding: 0 20px;
+    }
+    .Timeline .TimelineHead .level {
+        width: 20px;
+        height: 20px;
+        margin-left: 20px;
+    }
+    .Timeline  .tooltipText {
+        padding: 5px 10px;
+        left: 120%;
+        font-size: 1.1rem;
+      }
+    .TimelineContentButton button,.TimelineContentButton button::after {
+        padding: 5px 20px;
+        font-size: 1rem;
+    }
+}
+@media screen and (min-width: 575px) and (max-width: 767px) {
+    .bodyContainer .trackName {
+        font-size: 3rem;
+        margin: 20px auto;
+    }
+    .Timeline .TimelineHead {
+        font-size: 1.8rem;
+        margin: 0 auto 20px;
+    }
+    .Timeline .hint {
+        font-size: 1rem;
+    }
+    .Timeline .TimelineContainer {
+        width: 560px;
+    }
+    .Timeline .TimelineContainer .TimelineBox {
+        width: 430px;
+    }
+    .Timeline .TimelineContainer .TimelineBox::after {
+        right: 390px ;
+    }
+    .Timeline .TimelineContainer .TimelineBox:nth-child(even)::after {
+        left: -232px;
+    }
+    .Timeline .TimelineContainer .TimelineBox .TimelineContent  {
+        width: 100%;
+        height: 220px;
+        margin-left: -170px;
+    }
+    .Timeline .TimelineHead .level {
+        width: 15px;
+        height: 15px;
+        margin-left: 10px;
+    }
+    .Timeline  .tooltipText {
+        padding: 5px ;
+        left: 120%;
+        font-size: .9rem;
+      }
+    .Timeline .TimelineContainer .TimelineBox:nth-child(odd) .TimelineContent {
+        margin-left: 100px;
+    }
+    .Timeline .TimelineContainer .TimelineBox .TimelineCircle {
+        width: 60px;
+        height: 60px;
+        font-size: 1.4rem;
+        left: 10px;
+    }
+    .Timeline .TimelineContainer .TimelineBox:nth-child(even) .TimelineCircle  {
+        left: -260px;
+    }
+    .Timeline .TimelineContainer .TimelineBox .TimelineContent .TimelineContentName {
+        font-size: 1.8rem;
+    }
+    
+    .Timeline .TimelineContainer .TimelineBox .TimelineContent .TimelineContentDetails  {
+        font-size: .9rem;
+    }
+    .TimelineContentButton button,.TimelineContentButton button::after {
+        padding: 5px 20px;
+        font-size: 1rem;
+    }
+}
+@media screen and (min-width: 414px) and (max-width: 575px) {
+    .bodyContainer .trackName {
+        font-size: 2.5rem;
+        margin: 0px auto;
+    }
+    .Timeline .TimelineHead {
+        font-size: 1.3rem;
+        margin: 0 auto 10px;
+    }
+    .Timeline .hint {
+        font-size: 1rem;
+        margin-top: 20px;
+
+    }
+    .Timeline .TimelineContainer {
+        width: 400px;
+        margin: 10px auto;
+    }
+    .Timeline .TimelineContainer .TimelineBox {
+        width: 360px;
+    }
+    .Timeline .TimelineContainer .TimelineBox::after {
+        width: 1px;
+        left: 20px;
+        top: 100px;
+    }
+    .Timeline .TimelineContainer .TimelineBox:first-child:after {
+        top: 110px;
+    }
+    .Timeline .TimelineContainer .TimelineBox:last-child:after {
+        height: 0%;
+    }
+    .Timeline .TimelineContainer .TimelineBox:nth-child(even)::after {
+        left: -180px;
+    }
+    .Timeline .TimelineContainer .TimelineBox .TimelineCircle {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+        left: 0px;
+    }
+    .Timeline .TimelineContainer .TimelineBox:nth-child(even) .TimelineCircle  {
+        left : -200px;
+    }
+    .Timeline .TimelineContainer .TimelineBox .TimelineContent  {
+        width: 90%;
+        height: 220px;
+        margin-left: -140px;
+    }
+    .Timeline .TimelineHead .level {
+        width: 15px;
+        height: 15px;
+        margin-left: 10px;
+    }
+    .Timeline  .tooltipText {
+        padding: 5px ;
+        left: 110%;
+        font-size: .8rem;
+      }
+    .Timeline .TimelineContainer .TimelineBox:nth-child(odd) .TimelineContent {
+        margin-left: 60px;
+    }
+    .Timeline .TimelineContainer .TimelineBox .TimelineContent .TimelineContentName {
+        font-size: 1.2rem;
+    }
+    
+    .Timeline .TimelineContainer .TimelineBox .TimelineContent .TimelineContentDetails  {
+        font-size: .9rem;
+    }
+    .TimelineContentButton button,.TimelineContentButton button::after {
+        padding: 5px 20px;
+        font-size: 1rem;
+    }
+}
+@media screen  and (max-width: 413px) {
+    .bodyContainer .trackName {
+        font-size: 3rem;
+        margin: 0px auto;
+    }
+    .Timeline .TimelineHead {
+        font-size: 1.3rem;
+        margin: 0 0 0px;
+    }
+    .Timeline .hint {
+        margin-top: 20px;
+        font-size: .9rem;
+    }
+    .Timeline .TimelineContainer {
+        width: 350px ;
+    }
+    .Timeline .TimelineContainer .TimelineBox {
+        width: 340px;
+    }
+    .Timeline .TimelineContainer .TimelineBox::after {
+        width: 1px;
+        left: 30px;
+        top: 100px;
+    }
+    .Timeline .TimelineContainer .TimelineBox:first-child:after {
+        top: 110px;
+    }
+    .Timeline .TimelineContainer .TimelineBox:last-child:after {
+        height: 0%;
+    }
+    .Timeline .TimelineContainer .TimelineBox:nth-child(even)::after {
+        left: -143px;
+    }
+    .Timeline .TimelineContainer .TimelineBox .TimelineCircle {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+        left: 10px;
+    }
+    .Timeline .TimelineContainer .TimelineBox:nth-child(even) .TimelineCircle  {
+        left : -165px;
+    }
+    .Timeline .TimelineContainer .TimelineBox .TimelineContent  {
+        width: 80%;
+        height: 240px;
+        margin-left: -115px;
+    }
+    .Timeline .TimelineContainer .TimelineBox:nth-child(odd) .TimelineContent {
+        margin-left: 60px;
+    }
+    .Timeline .TimelineHead .level {
+        width: 15px;
+        height: 15px;
+        margin-left: 10px;
+    }
+    .Timeline  .tooltipText {
+        padding: 5px 10px;
+        left: 110%;
+        font-size: .8rem;
+      }
+    .Timeline .TimelineContainer .TimelineBox .TimelineContent .TimelineContentName {
+        font-size: 1.2rem;
+    }
+    .Timeline .TimelineContainer .TimelineBox .TimelineContent .TimelineContentDetails  {
+        max-width: 90%;
+        font-size: 1rem;
+    }
+    .TimelineContentButton button,.TimelineContentButton button::after {
+        padding: 5px 20px;
+        font-size: 1rem;
+    }
+}
+/* end timeline  */

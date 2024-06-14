@@ -1,0 +1,64 @@
+.contactSection .contact-form .form-control{
+    border-radius:1rem;
+}
+.contactSection .contact-image {
+    text-align: center;
+}
+.contactSection .contact-image svg{
+    width: 100px;
+    transform: rotate(29deg);
+    fill: var(--colored-bgc);
+}
+.contactSection .contact-form form{
+    width: 100%;
+    height: auto;
+    padding: 50px 0;
+}
+.contactSection .form-control  {
+    color: var(--pri_col);
+    background-color: var(--sec_bgc);
+    outline: 0;
+    border: 2px solid #E8EDED;  
+}
+.contactSection .form-control:focus {
+    color: var(--pri_col);
+    background-color: var(--sec_bgc);
+    border-color: #86b7fe;
+    box-shadow: none ;
+}
+.contactSection .contact-form .btnContact {
+    width: 50%;
+    border: none;
+    border-radius: 1rem;
+    padding: 1.5%;
+    font-weight: 600;
+    cursor: pointer;
+    background-color: var(--pri_bgc);
+    color: var(--pri_col);
+    transition: .5s;
+    border: 2px solid #E8EDED; 
+}
+.contactSection .contact-form .btnContact:hover {
+    background: var(--colored-bgc);
+    color: white;
+    border: none;
+}
+.contactSection .btnContactSubmit
+{
+    width: 50%;
+    border-radius: 1rem;
+    padding: 1.5%;
+    color: #fff;
+    background-color: #0062cc;
+    border: none;
+    cursor: pointer;
+}
+.contactSection input::placeholder ,.contactSection .message-box::placeholder  {
+    color: var(--pri_col) !important; 
+}
+@media (max-width : 991px) {
+    .contactSection .contact-form .btnContact  {
+        width: 100%;
+        padding: 20px 0 20px;
+    }
+}

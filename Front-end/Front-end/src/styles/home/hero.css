@@ -1,0 +1,269 @@
+
+/* ********************************************************************** hero section ***************************************************************** */
+.heroSection main {
+    min-height: 100vh;
+    display: flex;
+    justify-content: space-between;
+}
+.heroSection main .left {
+    position: relative;
+    width: 50%;
+    display: flex;
+    align-items: flex-start;
+    text-align: center; 
+    text-transform: capitalize;
+}
+.heroSection main .left .leftContent .text h1 {
+    font-size: 4em;
+    margin: 50px 0px 20px;
+    display: inline-flex;
+    font-weight: 700;
+}
+.heroSection main .left .leftContent .text h3 {
+    font-size: 4em;
+    font-weight: 700;
+}
+.heroSection main .left  .leftContent .text p{
+    max-width: 80%;
+    font-size: 1.5rem;
+    margin: 30px auto 50px;
+    font-weight: 200;
+    color: var(--muted_col);
+    text-align: center;
+}
+.mouse {
+    fill: var(--pri_col);
+    transform: rotate(180deg);
+    cursor: pointer;
+    width: fit-content;
+    margin: 0 auto;
+}
+.mouse svg {
+    transition: .5s;
+}
+.mouse:hover svg{
+    transform: scale(1.2);
+}
+@keyframes mouseMove {
+    0% {
+        left: 30px;
+    }
+    25% {
+        left: 20px;
+    }
+    50% {
+        left: 10px;
+    }
+    75% {
+        left: 20px;
+    }
+    100% {
+        left: 30px;
+    }
+}
+.heroSection main .right {
+    position: relative;
+    width: 50%;
+    overflow: hidden;
+} 
+.heroSection main .right .layout {
+    width: 850px;
+    height: 880px;
+    border-radius: 50%;
+    animation: servicesAnimation 10s ease-in-out  infinite ;
+}
+@keyframes servicesAnimation {
+    0%,20% {
+        transform: rotate(0deg);
+    }
+    25%,45% {
+        transform: rotate(-90deg);
+    }
+    50%,70% {
+        transform: rotate(-180deg);
+    }
+    75%,95% {
+        transform: rotate(-270deg);
+    }
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+.heroSection main .right .layout .services {
+    position: absolute;
+    left: 0px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    transform: rotate(calc(360deg / 4 * 1));
+    transform-origin: 420px;
+    background-color: var(--pri_bgc);
+    margin-right: 50px;
+    padding: 30px ;
+}
+.heroSection main .right .layout .services h3 {
+    font-size: 1.1em;
+}
+.heroSection main .right .layout .services:nth-child(2) {
+    transform: rotate(calc(360deg / 4 * 2));
+}
+.heroSection main .right .layout .services:nth-child(3) {
+    transform: rotate(calc(360deg / 4 * 3));
+}
+.heroSection main .right .layout .services:nth-child(4) {
+    transform: rotate(calc(360deg / 4 * 4));
+}
+.heroSection main .right .layout .services{
+    font-size: 1.5em;
+    color: #4DA6FF;
+}
+.heroSection main .right .circle {
+    width: 80%;
+    height: 80%;
+    border-radius: 50%;
+    border: 3px solid #4DA6FF;
+}
+.heroSection main .right .overlay {
+    width: 0%;
+    height: 0%;
+    top: 50%;
+    transform: translateY(-50% );
+    border-top: 500px solid var(--colored-bgc);
+    border-bottom: 500px solid var(--colored-bgc);
+    border-left: 400px solid transparent;
+    border-right: 500px solid var(--colored-bgc);
+    
+}
+@media (max-width : 1650px ) {
+    .heroSection main .right .layout {
+        width: 850px;
+        height: 800px;
+    }
+}
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+    .heroSection .navbar {
+        width: 70px;    
+    }
+    .heroSection main .left .leftContent {
+      margin-left: 40px;
+    }
+    .heroSection main .left .leftContent .text h1 {
+        font-size: 4em;
+        margin: 50px 20px 0px;
+    }
+    .heroSection main .left .leftContent .text h3 {
+        font-size: 3.7em;
+    }
+    .heroSection main .left  .leftContent .text p{
+        font-size: 1.4rem;
+        margin: 30px auto 50px;
+    }
+    .heroSection main .right .circle {
+        width: 70%;
+        height: 70%
+    }
+    .heroSection main .right .layout .services {
+        transform-origin: 400px;
+        margin: 30px;
+    } 
+    .heroSection main .right .layout {
+        width: 850px;
+        height: 800px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    .heroSection .navbar {
+        width: 70px;
+        font-size: .9em;
+    }
+    .heroSection main .left  .leftContent {
+        margin-left: 40px;
+    }
+    .heroSection main .left  .leftContent .text h1 {
+        font-size: 2.5em;
+    }
+    .heroSection main .left  .leftContent .text h3 {
+        font-size: 2.3em;
+        font-weight: 700;
+    }
+    .heroSection main .left  .leftContent .text p {
+      font-size: 1.3rem;
+    }
+    .heroSection main .right .layout {
+        width: 500px;
+        height: 500px;
+        margin-top: 150px;
+    }
+    .heroSection main .right .circle {
+        width: 70%;
+        height: 70%
+    }
+    .heroSection main .right .layout .services {
+        transform-origin: 260px;
+        font-size: 1.1rem;
+    }
+    .heroSection main .right .overlay {
+        border-top: 500px solid var(--colored-bgc);
+        border-bottom: 500px solid var(--colored-bgc);
+        border-left: 260px solid transparent;
+        border-right: 500px solid var(--colored-bgc)
+    };
+}
+@media screen and (min-width: 420px) and (max-width: 767px) {
+  .heroSection .navbar {
+      width: 70px;
+  }
+  .heroSection main .left {
+      height: 100vh;
+      width: 100%;
+  }
+  .heroSection main .left  .leftContent   {
+      min-height: 100vh;
+  }
+  .heroSection main .left  .leftContent .text h1 {
+      font-size: 3.3rem;
+      margin: 30px auto 0; 
+  }
+  .heroSection main .left  .leftContent .text h3 {
+      font-size: 3.3em;
+  }
+  .heroSection main .right {
+    display: none;
+}
+.heroSection main .left  .leftContent .text p{
+    font-size: 1.4rem;
+    margin: 30px auto 40px;
+}
+}
+@media screen  and (max-width: 419px) {
+  .heroSection .navbar {
+      width: 60px;
+      font-size: .8em;
+  }
+  .heroSection main .left {
+      width: 100%;
+  }
+  .heroSection main .right {
+      display: none;
+  }
+  .heroSection main .left  .leftContent   {
+      height: 100%;
+  }
+  .heroSection main .left  .leftContent .text h1 {
+      font-size: 2.5em;
+      margin: 20px auto;
+  }
+  .heroSection main .left  .leftContent .text h3 {
+      font-size: 2.5em;
+  }
+  .heroSection main .left  .leftContent .text p{
+    font-size: 1.3rem;
+    margin: 30px auto 35px;
+}
+.heroSection main {
+    min-height: 110vh;
+}
+}
+
+/************************************************************************** end hero section  ********************************************************************/

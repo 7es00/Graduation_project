@@ -1,0 +1,75 @@
+/* footer {
+    width: calc(100%  - 70px);
+    margin: 0 0 0 70px;
+    width: 100%;
+} */
+.footerSection hr {
+    width: 60px;
+     background-color: #7c4dff; 
+     height: 2px;
+}
+.footerSection .media-box .main .card{
+    background-color: #101722;
+}
+.footerSection .media-box .text {
+    color: white;
+}
+.Copyright {
+    background-color: #090F18;
+}
+.footerSection .button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #090F18;
+    border: none;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 0px 4px rgba(180, 160, 255, 0.253);
+    cursor: pointer;
+    transition-duration: 0.3s;
+    overflow: hidden;
+    position: relative;
+    margin: 50px auto;
+  }
+  
+.footerSection .svgIcon {
+    width: 12px;
+    transition-duration: 0.3s;
+  }
+  
+.footerSection .svgIcon path {
+    fill: white;
+  }
+  
+.footerSection .button:hover {
+    width: 140px;
+    border-radius: 50px;
+    transition-duration: 0.3s;
+    background-color: #090F18;
+    align-items: center;
+  }
+  
+.footerSection .button:hover .svgIcon {
+    transition-duration: 0.3s;
+    transform: translateY(-200%);
+  }
+  
+.footerSection .button::before {
+    position: absolute;
+    bottom: -20px;
+    content: "Back to Top";
+    color: white;
+    font-size: 0px;
+  }
+  
+.footerSection .button:hover::before {
+    font-size: 13px;
+    opacity: 1;
+    bottom: unset;
+    /* transform: translateY(-30px); */
+    transition-duration: 0.3s;
+  }
+  

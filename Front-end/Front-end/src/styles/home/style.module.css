@@ -1,0 +1,1117 @@
+/**************************************************************************  basics ********************************************************************/
+
+
+
+/* 
+.heroSection .navbar {
+  width: 5%;
+  height: 100%;
+  box-shadow: 0 0px 5px 0px rgba(0, 0, 0, 0.3);
+  border-radius: 50px;
+}
+.navbarLogoContainer {
+  width: 100px;
+  height: 100px;
+}
+.logoImage {
+  width: 80%;
+  height: 80%;
+  margin: 5px;
+}
+.heroSection .navbar .links {
+  height: 60%;
+  top: 10%;
+  font-size: 1.5em;
+}
+.heroSection .navbar .links i,
+.heroSection .navbar .mods i {
+  position: relative;
+  transition: 0.3s;
+  z-index: var(--max_Z_Index);
+}
+.heroSection .navbar .links i::after,
+.heroSection .navbar .mods i::after,
+.leftContent .social i::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  transition: 0.3s;
+  z-index: var(--low_Z_Index);
+}
+.heroSection .navbar .links i:hover,
+.heroSection .navbar .mods i:hover {
+  color: var(--lgt_pri_bgc);
+}
+.heroSection .navbar .links i:hover::after,
+.heroSection .navbar .mods i:hover::after,
+.leftContent .social i:hover::after {
+  background-color: var(--lgt_sec_bgc);
+  box-shadow: 0 0px 5px 0px rgba(0, 0, 0, 0.5);
+  transform: scale(1.5);
+}
+.heroSection .navbar .mods {
+  height: 10%;
+  top: 75%;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+.heroSection .navbar .mods i {
+  padding: 0px 5px !important;
+}
+
+.heroSection main {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+}
+.heroSection main .left {
+  width: 50%;
+}
+.heroSection main .left .leftContent {
+  height: 70vh;
+  display: flex;
+  align-items: center;
+}
+.heroSection main .left .leftContent .text {
+  width: 90%;
+  height: 100%;
+  text-align: center;
+  text-transform: capitalize;
+}
+.heroSection main .left .leftContent .text h1 {
+  font-size: 2.5em;
+  margin: 50px 20px 20px;
+  display: inline-flex;
+  font-weight: 700;
+}
+.heroSection main .left .leftContent .text > span i {
+  font-size: 3.5em;
+  color: var(--lgt_sec_col);
+}
+.heroSection main .left .leftContent .text h3 span {
+  color: var(--lgt_sec_col);
+}
+.heroSection main .left .leftContent .text h3 {
+  font-size: 3.5em;
+  font-weight: 700;
+}
+.heroSection main .left .leftContent .text p {
+  max-width: 80%;
+  font-size: 1.4em;
+  margin: 30px auto 80px;
+}
+
+.btnShine {
+  position: relative;
+  margin: 0;
+  padding: 17px 35px;
+  outline: none;
+  text-decoration: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  background-color: #fff;
+  border: 1px solid rgba(22, 76, 167, 0.6);
+  border-radius: 10px;
+  color: var(--lgt_sec_col);
+  font-weight: 400;
+  font-family: inherit;
+  z-index: 0;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.02, 0.01, 0.47, 1);
+}
+
+.btnShine a {
+  color: var(--lgt_sec_col);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.7px;
+}
+
+.btnShine:hover {
+  animation: rotate624 0.7s ease-in-out both;
+}
+
+.btnShine:hover a {
+  animation: storm1261 0.7s ease-in-out both;
+  animation-delay: 0.06s;
+}
+
+@keyframes rotate624 {
+  0% {
+      transform: rotate(0deg) translate3d(0, 0, 0);
+  }
+
+  25% {
+      transform: rotate(3deg) translate3d(0, 0, 0);
+  }
+
+  50% {
+      transform: rotate(-3deg) translate3d(0, 0, 0);
+  }
+
+  75% {
+      transform: rotate(1deg) translate3d(0, 0, 0);
+  }
+
+  100% {
+      transform: rotate(0deg) translate3d(0, 0, 0);
+  }
+}
+
+@keyframes storm1261 {
+  0% {
+      transform: translate3d(0, 0, 0) translateZ(0);
+  }
+
+  25% {
+      transform: translate3d(4px, 0, 0) translateZ(0);
+  }
+
+  50% {
+      transform: translate3d(-3px, 0, 0) translateZ(0);
+  }
+
+  75% {
+      transform: translate3d(2px, 0, 0) translateZ(0);
+  }
+
+  100% {
+      transform: translate3d(0, 0, 0) translateZ(0);
+  }
+}
+
+.btnShine {
+  border: 1px solid;
+  overflow: hidden;
+  position: relative;
+}
+
+.btnShine a {
+  z-index: 20;
+}
+
+.btnShine:after {
+  background: #38ef7d;
+  content: "";
+  height: 155px;
+  left: -75px;
+  opacity: 0.4;
+  position: absolute;
+  top: -50px;
+  transform: rotate(35deg);
+  transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
+  width: 50px;
+  z-index: -10;
+}
+
+.btnShine:hover:after {
+  left: 120%;
+  transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.heroSection main .left .social {
+  width: 10%;
+  height: 80%;
+  justify-content: space-around;
+  flex-direction: column;
+  font-size: 1.5em;
+}
+.leftContent .social i {
+  position: relative;
+  padding: 8px;
+  transition: 0.3s;
+  color: var(--lgt_sec_col);
+}
+.leftContent .social i:hover {
+  color: white;
+}
+
+.heroSection main .right {
+  position: relative;
+  width: 50%;
+}
+.heroSection main .right .layout {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  animation: servicesAnimation 10s ease-in-out infinite;
+}
+@keyframes servicesAnimation {
+  0%,
+  20% {
+      transform: rotate(0deg);
+  }
+  25%,
+  45% {
+      transform: rotate(-90deg);
+  }
+  50%,
+  70% {
+      transform: rotate(-180deg);
+  }
+  75%,
+  95% {
+      transform: rotate(-270deg);
+  }
+  100% {
+      transform: rotate(-360deg);
+  }
+}
+.heroSection main .right .layout .services {
+  position: absolute;
+  left: 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  transform: rotate(calc(360deg / 4 * 1));
+  transform-origin: 350px;
+  background-color: var(--lgt_pri_bgc);
+  margin: 30px;
+  padding: 20px 0;
+}
+.heroSection main .right .layout .services h3 {
+  font-size: 1.1em;
+}
+.heroSection main .right .layout .services:nth-child(2) {
+  transform: rotate(calc(360deg / 4 * 2));
+}
+.heroSection main .right .layout .services:nth-child(3) {
+  transform: rotate(calc(360deg / 4 * 3));
+}
+.heroSection main .right .layout .services:nth-child(4) {
+  transform: rotate(calc(360deg / 4 * 4));
+}
+.heroSection main .right .layout .services {
+  font-size: 1.5em;
+  color: #4da6ff;
+}
+.heroSection main .right .layout .services i {
+  font-size: 1.5em;
+}
+.circle {
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
+  border: 3px solid #4da6ff;
+}
+.overlay {
+  width: 0%;
+  height: 0%;
+  top: 50%;
+  transform: translateY(-50%);
+  border-top: 500px solid var(--lgt_sec_bgc);
+  border-bottom: 500px solid var(--lgt_sec_bgc);
+  border-left: 400px solid transparent;
+  border-right: 500px solid var(--lgt_sec_bgc);
+}
+
+@media screen and (max-width: 2490px) {
+  .heroSection .navbar {
+      width: 5%;
+      background-color: red;
+  }
+  .navbarLogoContainer {
+      width: 70px;
+      height: 70px;
+  }
+  .heroSection .navbar .links i,
+  .heroSection .navbar .mods i {
+      font-size: 1em;
+      padding: 5px;
+  }
+  .heroSection main .left .leftContent .text h1 {
+      font-size: 3em;
+  }
+  .heroSection main .left .leftContent .text h3 {
+      font-size: 5em;
+  }
+}
+@media screen and (min-width: 1025px) and (max-width: 1300px) {
+  .heroSection .navbar {
+      width: 7%;
+  }
+  .heroSection main .left .social {
+      font-size: 1.6em;
+      height: 80%;
+      z-index: var(--lrgerst_Z_Index);
+  }
+  .heroSection main .left .leftContent .text h1 {
+      font-size: 2em;
+      margin: 50px 20px 0px;
+  }
+  .heroSection main .left .leftContent .text > span i {
+      font-size: 3em;
+  }
+  .heroSection main .left .leftContent .text h3 {
+      font-size: 3.5em;
+  }
+  .heroSection main .left .leftContent .text p {
+      font-size: 1.5em;
+      margin: 30px auto 50px;
+  }
+  .heroSection main .left .leftContent .text a {
+      padding: 15px;
+      font-size: 1.3em;
+  }
+  .heroSection main .left .leftContent .text a i {
+      font-size: 1.2em;
+      margin-left: 10px;
+  }
+  .heroSection main .right .layout {
+      width: 800px;
+      height: 800px;
+      border-radius: 50%;
+  }
+  .heroSection main .right .layout .services {
+      transform-origin: 350px;
+  }
+  .heroSection main .right .layout .services {
+      margin: 30px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .heroSection .navbar {
+      width: 70px;
+      font-size: 0.9em;
+  }
+  .heroSection main .left .leftContent {
+      height: 100vh;
+      font-size: 1em;
+      margin-left: 40px;
+  }
+  .heroSection main .left .leftContent .text {
+      margin-top: 250px;
+  }
+  .heroSection main .left .leftContent .text span i {
+      font-size: 2.5em;
+  }
+  .heroSection main .left .leftContent .text h1 {
+      font-size: 2em;
+  }
+  .heroSection main .left .leftContent .text h3 {
+      font-size: 2em;
+      font-weight: 700;
+  }
+  .heroSection main .left .social {
+      font-size: 1.5em;
+      height: 70%;
+      z-index: var(--lrgerst_Z_Index);
+      width: 20%;
+  }
+  .heroSection main .right .layout {
+      width: 500px;
+      height: 500px;
+      margin-top: 200px;
+  }
+  .heroSection main .right .layout .services {
+      transform-origin: 240px;
+      font-size: 1em;
+  }
+  .heroSection main .right .layout .services {
+      margin: 30px;
+  }
+  .overlay {
+      border-top: 500px solid var(--lgt_sec_bgc);
+      border-bottom: 500px solid var(--lgt_sec_bgc);
+      border-left: 250px solid transparent;
+      border-right: 500px solid var(--lgt_sec_bgc);
+  }
+  .circle {
+      margin-left: 1500px;
+  }
+}
+@media screen and (min-width: 412px) and (max-width: 767px) {
+  .heroSection .navbar {
+      width: 70px;
+      font-size: 1em;
+  }
+  .heroSection main .left {
+      height: 100vh;
+      width: 100%;
+      font-size: 1.1em;
+      margin-left: 40px;
+  }
+  .heroSection main .right {
+      display: none;
+  }
+
+  .heroSection main .left .leftContent {
+      height: 100%;
+  }
+  .heroSection main .left .leftContent .text {
+      margin-top: 150px;
+  }
+  .heroSection main .left .leftContent .text span i {
+      font-size: 2.5em;
+  }
+  .heroSection main .left .leftContent .text h1 {
+      font-size: 2em;
+  }
+  .heroSection main .left .leftContent .text h3 {
+      font-size: 1.5em;
+  }
+  .heroSection main .left .social {
+      font-size: 1.5em;
+      z-index: var(--lrgerst_Z_Index);
+      width: 20%;
+  }
+}
+@media screen and (max-width: 413px) {
+  .heroSection .navbar {
+      width: 50px;
+      font-size: 0.8em;
+  }
+  .heroSection main .left {
+      height: 100vh;
+      width: 100%;
+      font-size: 0.9em;
+      margin-left: 20px;
+  }
+  .heroSection main .right {
+      display: none;
+  }
+
+  .heroSection main .left .leftContent {
+      height: 100%;
+  }
+  .heroSection main .left .leftContent .text {
+      margin-top: 100px;
+  }
+  .heroSection main .left .leftContent .text span i {
+      font-size: 2.5em;
+  }
+  .heroSection main .left .leftContent .text h1 {
+      font-size: 2.5em;
+  }
+  .heroSection main .left .leftContent .text h3 {
+      font-size: 3.5em;
+  }
+  .heroSection main .left .social {
+      font-size: 1em;
+      z-index: var(--lrgerst_Z_Index);
+      width: 20%;
+      height: 50%;
+      font-size: 1.5em;
+  }
+}
+
+
+.stacks {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  padding: 20px 0 0;
+  font-weight: 600;
+  margin: 0 auto 800px;
+}
+.stacks .heading {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  margin: 0 auto 40px;
+}
+.stacks .heading::before {
+  content: "";
+  position: absolute;
+  left: 43%;
+  bottom: -10px;
+  width: 200px;
+  height: 3px;
+  background-color: #4da6ff;
+}
+.stacks .stacksHeading {
+  font-size: 3em;
+}
+.stacks .stacksContent {
+  position: relative;
+  width: 98%;
+  min-height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-left: 20px;
+}
+.stacks .stacksContent .tracks {
+  position: relative;
+  width: calc((80% / 2) - 20px);
+  height: 350px;
+  margin: 10px;
+  overflow: hidden;
+  border: 1px solid rgb(231, 231, 231);
+  padding: 10px 0;
+  border-radius: 30px;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+}
+.stacks .stacksContent .tracks .stackName {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  text-align: center;
+  font-size: 1.5em;
+  margin: 20px 0;
+}
+.stacks .stacksContent .tracks .trackContent {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+.stacks .stacksContent .tracks .trackContent .track {
+  position: relative;
+  width: calc((100% / 3) - 30px);
+  height: 200px;
+}
+.stacks .stacksContent .tracks .trackContent .track .trackIcon {
+  width: 60%;
+  height: 40%;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  margin: 0px auto;
+  font-size: 3em;
+}
+.stacks .stacksContent .tracks .trackContent .track > .trackName {
+  position: relative;
+  min-width: 100%;
+  height: 50px;
+  margin: 50px auto;
+  text-align: center;
+  padding: 10px 5px;
+  font-size: 1.1em;
+  border-radius: 15px;
+  overflow: hidden;
+}
+.stacks .stacksContent .tracks .trackContent .track > .trackName a {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 50%;
+  transform: translate(-50%);
+}
+.track .trackName:hover {
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  transition: 1s;
+}
+.track > .trackName::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #4da6ff;
+  transition: transform 0.6s;
+  z-index: -1;
+  transform: scaleX(0);
+  transform-origin: right;
+}
+.track > .trackName:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+.track > .trackName a {
+  text-decoration: none;
+  color: black;
+  z-index: 99999;
+}
+.track > .trackName:hover a {
+  color: white;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .stacks .stacksHeading {
+      font-size: 2.5em;
+  }
+  .stacks .heading::before {
+      left: 35%;
+  }
+  .stacks .stacksContent {
+      margin: 0 30px;
+      width: 96%;
+  }
+  .stacks .stacksContent .tracks .stackName {
+      font-size: 1.2em;
+  }
+  .stacks .stacksContent .tracks .trackContent .track .trackIcon {
+      font-size: 2em;
+  }
+  .stacks .stacksContent .tracks .trackContent .track > .trackName a {
+      font-size: 0.7em;
+      padding: 5px;
+  }
+}
+@media screen and (min-width: 650px) and (max-width: 768px) {
+  .stacks .stacksHeading {
+      font-size: 2.5em;
+  }
+  .stacks .heading::before {
+      left: 33%;
+  }
+  .stacks .stacksContent {
+      margin: 0 30px;
+      width: 96%;
+  }
+  .stacks .stacksContent .tracks .stackName {
+      font-size: 1em;
+  }
+  .stacks .stacksContent .tracks {
+      margin: 8px;
+      height: 300px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+  }
+  .stacks .stacksContent .tracks .trackContent .track .trackIcon {
+      font-size: 1.5em;
+  }
+  .stacks .stacksContent .tracks .trackContent .track > .trackName a {
+      font-size: 0.7em;
+      padding: 8px 0;
+  }
+}
+@media screen and (max-width: 650px) {
+  .stacks .stacksHeading {
+      font-size: 2.5em;
+  }
+  .stacks .heading::before {
+      left: 25%;
+  }
+  .stacks .stacksContent {
+      width: 96%;
+  }
+  .stacks .stacksContent .tracks .stackName {
+      font-size: 1em;
+      margin: 20px 0;
+  }
+  .stacks .stacksContent .tracks {
+      margin: 10px 0px 0 10px;
+      width: calc(95% - 30px);
+  }
+  .stacks .stacksContent .tracks .trackContent .track .trackIcon {
+      font-size: 1.3em;
+  }
+  .stacks .stacksContent .tracks .trackContent .track > .trackName a {
+      font-size: 0.8em;
+      padding: 5px 0;
+  }
+  #knowledge {
+      margin: 900px 0 !important;
+  }
+}
+#knowledge {
+  height: 150vh;
+  margin: 150px auto -150px;
+}
+#knowledge .stacks {
+  margin: 0 auto 0 40px;
+}
+@media screen and (max-width: 768px) {
+  #knowledge .stacks .stacksContent {
+      margin: 0 auto;
+  }
+  .buddy {
+      margin-top: -300px;
+  }
+} */
+/************************************************************************** end stacks ********************************************************************/
+/************************************************************************** buddy ********************************************************************/
+/* home */
+.buddy {
+  position: relative;
+  width: 95%;
+  min-height: 100vh;
+  margin-left: 5%;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  flex-direction: column;
+  /* background-color: yellow; */
+}
+.buddy .buddyContainer {
+  position: relative;
+  width: 600px;
+  height: 30%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  transform: translateY(100%);
+  transition: 1s;
+  /* background-color: red; */
+}
+.buddy .buddyContainerUp {
+  transform: translateY(0);
+}
+.buddy .buddyContainer .buddyLogo {
+  position: relative;
+  width: 20%;
+  height: 140px;
+  border-radius: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 7em;
+  color: white;
+  margin: 10px 0;
+  background-color: black;
+}
+.buddy .buddyContainer .details {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 1.3em;
+  text-transform: capitalize;
+}
+.buddy .buddyContainer .chatBtn {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.buddy .buddyContainer .chatBtn button {
+  width: 150px;
+  height: 50px;
+  font-size: 1.1em;
+  outline: none;
+  background-color: #4da6ff;
+  border: none;
+  border-radius: 30px;
+  color: white;
+  transition: 0.5s;
+  cursor: pointer;
+}
+.buddy .buddyContainer .chatBtn button:hover {
+  transform: scale(1.2);
+}
+.buddy .buddyContainer .removeChatInput {
+  transform: scaleY(0);
+}
+.buddy .chatForm {
+  position: relative;
+  width: 100%;
+  height: 70vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  transform: scaleY(0);
+  transition: 0.5s;
+}
+.buddy .chatFormAppear {
+  transform: scaleY(1);
+}
+.buddy .chatForm .answer {
+  position: relative;
+  width: 80%;
+  height: 70vh;
+  border-radius: 50px;
+  border: 1px solid black;
+  /* background-color: rebeccapurple; */
+}
+.buddy .chatForm .input {
+  position: relative;
+  width: 80%;
+  height: 75px;
+  font-size: 1.5em;
+}
+.form .input input {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  padding: 0 60px 0 30px;
+  outline: none;
+  border: 1px solid black;
+  font-size: 0.8em;
+  text-align: start;
+  background-color: transparent;
+}
+.form .input i {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  top: 50%;
+  right: 0;
+  text-align: center;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+@media screen and (max-width: 650px) {
+  .buddy .buddyContainer .details {
+      font-size: 0.8em;
+  }
+  .buddy .chatForm {
+      width: 90%;
+      /* margin: 0 auto; */
+  }
+  .buddy .chatForm .answer,
+  .buddy .chatForm .input {
+      width: 95%;
+      margin-left: 30px;
+  }
+}
+/************************************************************************** end buddy ********************************************************************/
+
+/* .contact {
+  position: relative;
+  width: 95%;
+  height: 100vh;
+  margin-left: 6%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.contact .heading {
+  width: 100%;
+  height: 10vh;
+  top: 0;
+  font-size: 3em;
+  margin: 50px;
+  text-align: center;
+}
+.contact .heading span {
+  color: var(--lgt_sec_col);
+}
+.contactForm {
+  position: relative;
+  width: 100%;
+  height: 0vh;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.contactForm .contactInput {
+  position: relative;
+  width: calc((97% / 2) - 50px);
+  height: 60px;
+  margin-right: 0px;
+  outline: none;
+  border: 1px solid var(--lgt_sec_bgc);
+  border-radius: 10px;
+  margin: 30px;
+  padding: 0 20px;
+  font-size: 1.2em;
+}
+.contactForm .contactTextArea {
+  position: relative;
+  margin-right: 0px;
+  outline: none;
+  border: 1px solid var(--lgt_sec_bgc);
+  border-radius: 10px;
+  margin: 30px;
+  padding: 20px;
+  font-size: 1.2em;
+  width: 94%;
+}
+.contactForm .contactInput:focus,
+textarea:focus {
+  border: 1px solid var(--lgt_sec_bgc);
+  color: var(--lgt_sec_col);
+}
+.contactForm .contactInput:focus::placeholder,
+textarea:focus::placeholder {
+  color: var(--lgt_sec_col);
+}
+textarea {
+  width: 95%;
+  height: 250px;
+  padding: 20px;
+}
+.contactForm .submit {
+  position: relative;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+
+@media screen and (max-width: 1024px) {
+  .contactForm .contactInput,
+  textarea {
+      width: 100%;
+  }
+}
+@media screen and (max-width: 700px) {
+  .contactForm .contactInput,
+  textarea {
+      width: 100%;
+      margin-left: 50px;
+  }
+}
+
+.oneDiv {
+  background-color: #322e2e;
+  width: 120px;
+  height: 100px;
+  position: fixed;
+  right: 25px;
+  bottom: -0px;
+  z-index: var(--lrgerst_Z_Index);
+  border: solid 10px #dacfcf;
+  border-radius: 50% 50% 44% 44% / 55% 55% 40% 40%;
+}
+
+.oneDiv::before,
+.oneDiv::after {
+  content: "";
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  top: 35%;
+  background-image: repeating-linear-gradient(
+      0deg,
+      #474bff,
+      #474bff 3.5px,
+      transparent 3.5px,
+      transparent
+  );
+  background-size: 0.4rem 0.4rem;
+  background-color: #31abd1;
+  border: solid 2px #00adcc;
+  filter: drop-shadow(0 1px 6px #04d9ff);
+}
+
+.oneDiv::before {
+  left: 16px;
+  border-radius: 25% 75% 25% 75% / 25% 75% 25% 75%;
+}
+
+.oneDiv::after {
+  right: 16px;
+  border-radius: 75% 25% 75% 25% / 75% 25% 75% 25%;
+}
+
+.oneDiv {
+  animation: float 1.5s infinite;
+}
+
+.oneDiv::before,
+.oneDiv::after {
+  animation: blink 2.5s infinite;
+}
+
+@keyframes float {
+  0% {
+      bottom: 50px;
+  }
+
+  50% {
+      bottom: 45px;
+  }
+
+  100% {
+      bottom: 50px;
+  }
+}
+
+@keyframes blink {
+  90% {
+      transform: none;
+      animation-timing-function: ease-in;
+  }
+
+  93% {
+      transform: translateY(15px) scaleY(0);
+  }
+
+  100% {
+      animation-timing-function: ease-out;
+  }
+} */
+
+/* Add these styles to your existing style.module.css file */
+
+.buddyContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.chatContainer {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  max-height: 300px; /* Adjust as needed */
+  overflow-y: auto;
+  padding: 10px;
+  background-color: #f0f0f0;
+  border-radius: 8px;
+}
+
+.chatHistory {
+  display: flex;
+  flex-direction: column;
+}
+
+.chatMessage {
+  max-width: 70%;
+  margin: 5px;
+  padding: 8px;
+  border-radius: 8px;
+}
+
+.userMessage {
+  background-color: #4caf50; /* Green color for user's messages */
+  color: white;
+  align-self: flex-end; /* Align user's messages to the right */
+}
+
+.botMessage {
+  background-color: #2196f3; /* Blue color for bot's messages */
+  color: white;
+  align-self: flex-start; /* Align bot's messages to the left */
+}
+
+.form {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.input {
+  display: flex;
+  flex-grow: 1;
+  margin-right: 10px;
+}
+
+.sendButton {
+  padding: 8px 16px;
+  background-color: #4caf50; /* Green color for send button */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.sendButton:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+  .chatMessage {
+      max-width: 80%;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .chatMessage {
+      max-width: 100%;
+  }
+}

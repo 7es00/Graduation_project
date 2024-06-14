@@ -1,0 +1,96 @@
+/* ----------------------------------------------------------------documentation start ------------------------------------------------------------------------------------------------ */
+.documentationSection .recommendtionText {
+    color: var(--muted_col);
+}
+.documentationBox {
+    position: relative;
+    border: 1px solid var(--colored-bgc);
+}
+.documentationBox .img {
+    width: 100%;
+    height: 150px;
+    overflow: hidden;
+}
+.documentationBox .img img {
+    transition: .8s;
+}
+.documentationBox:hover .img img {
+    transform: scale(1.4);
+}
+.documentationBox .documentationName {
+    font-size: 2rem;
+    color: var(--sec_col);
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.documentationBox  .documentationDetails {
+    font-size: 1rem;
+    text-align: center;
+    color: var(--muted_col);
+    min-height: 70px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+}
+.documentationButton {
+    position: relative;
+    font-size: 17px;
+    background: var(--sec_bgc);
+    border: none;
+    padding: 1em 2.5em;
+    color: var(--sec_col);
+    transition: 0.5s ease;
+    cursor: pointer;
+    border-radius: 10px;
+    overflow: hidden;
+    z-index: var(--larger-z-index);
+    margin: 30px auto;
+    z-index: 9999999;
+}
+.documentationButton::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 0%;
+    background-color: var(--sebc_col);
+    transition: 0.5s ease;
+}
+.documentationButton:hover {
+    color: white;
+    transition-delay: 0.5s;
+}
+.documentationButton:hover::before {
+    width: 100%;
+}
+.documentationButton::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 00%;
+    width: 100%;
+    background-color: var(--colored-bgc);
+    transition: 0.4s ease;
+    z-index: -1;
+}
+.documentationButton:hover::after {
+    height: 100%;
+    transition-delay: 0.4s;
+    color: aliceblue;
+}
+.documentationSection .swiper-pagination {
+    position: relative;
+    margin: 20px !important;
+}
+.documentationSection .swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    background-color: var(--colored-bgc);
+    margin: -10px var(--swiper-pagination-bullet-horizontal-gap, 4px) !important;
+}
+/* ----------------------------------------------------------------documentation end ------------------------------------------------------------------------------------------------ */

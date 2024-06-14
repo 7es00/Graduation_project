@@ -1,0 +1,183 @@
+.websiteSwiper {
+    position: relative;
+    padding: 50px 0;
+}
+.websiteBox {
+    position: relative;
+    height: 550px;
+    border-radius: 15px;
+    width: 100%;
+    transition: .5s;
+    border: 1px solid gainsboro;
+}
+.websiteBox:hover {
+    border: 1px solid var(--colored-bgc);
+}
+.websiteBox:hover .name {
+    color: #007ff6;
+}
+.websiteBox .imgBox {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;  
+    margin: 0 auto;
+    height: 200px;  
+    overflow: hidden;
+}
+.websiteBox .imgBox  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .8s;
+}
+.websiteBox:hover img {
+    transform: scale(1.3);
+}
+.websitesButtons {
+    margin: 50px auto;
+}
+.websiteBox .name {
+    font-size: 2.5rem;
+    color: var(--sec_col);
+    transition: .5s;
+}
+.websiteBox .hint {
+    font-size: 1.3rem;
+    min-height: 150px ;
+    color: var(--muted_col);
+}
+.websitesButtons,
+.websitesButtons::after {
+    padding: 16px 20px;
+    font-size: 18px;
+    background: linear-gradient(45deg, transparent 5%, #ff013c 5%);
+    border: 0;
+    color: var(--text-white-color);
+    letter-spacing: 3px;
+    line-height: 1;
+    box-shadow: 6px 0px 0px #00e6f6;
+    outline: transparent;
+    position: relative;
+    width: 70%;
+}
+.websitesButtons::after {
+ --slice-0: inset(50% 50% 50% 50%);
+ --slice-1: inset(80% -6px 0 0);
+ --slice-2: inset(50% -6px 30% 0);
+ --slice-3: inset(10% -6px 85% 0);
+ --slice-4: inset(40% -6px 43% 0);
+ --slice-5: inset(80% -6px 5% 0);
+ content: "HOVER ME";
+ display: block;
+ position: absolute;
+ top: 0;
+ left: 0;
+ right: 0;
+ bottom: 0;
+ background: linear-gradient(45deg, transparent 3%, #00e6f6 3%, #00e6f6 5%, #ff013c 5%);
+ text-shadow: -3px -3px 0px #f8f005, 3px 3px 0px #00e6f6;
+ clip-path: var(--slice-0);
+}
+.websitesButtons:hover::after {
+ animation: 1s glitch;
+ animation-timing-function: steps(2, end);
+}
+
+@keyframes glitch {
+ 0% {
+  clip-path: var(--slice-1);
+  transform: translate(-20px, -10px);
+ }
+
+ 10% {
+  clip-path: var(--slice-3);
+  transform: translate(10px, 10px);
+ }
+
+ 20% {
+  clip-path: var(--slice-1);
+  transform: translate(-10px, 10px);
+ }
+
+ 30% {
+  clip-path: var(--slice-3);
+  transform: translate(0px, 5px);
+ }
+
+ 40% {
+  clip-path: var(--slice-2);
+  transform: translate(-5px, 0px);
+ }
+
+ 50% {
+  clip-path: var(--slice-3);
+  transform: translate(5px, 0px);
+ }
+
+ 60% {
+  clip-path: var(--slice-4);
+  transform: translate(5px, 10px);
+ }
+
+ 70% {
+  clip-path: var(--slice-2);
+  transform: translate(-10px, 10px);
+ }
+
+ 80% {
+  clip-path: var(--slice-5);
+  transform: translate(20px, -10px);
+ }
+
+ 90% {
+  clip-path: var(--slice-1);
+  transform: translate(-10px, 0px);
+ }
+
+ 100% {
+  clip-path: var(--slice-1);
+  transform: translate(0);
+ }
+}
+@media (max-width: 576px) {
+    .websitesButtons {
+        margin-top: 30px;
+    }
+}
+@media (min-width: 576px) and (max-width: 768px) {
+    .websiteBox .name {
+        font-size: 2rem;
+    }
+    .websiteBox .hint {
+        font-size: 1.1rem;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+    .websiteBox .name {
+        font-size: 1.8rem;
+    }
+    .websiteBox .hint {
+        font-size: 1.2rem;
+    }
+    .websiteBox .websitesButtons {
+        font-size: .8rem;
+        margin-top: 50px;
+    }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1400px) {
+    .websiteBox .name {
+        font-size: 2rem;
+    }
+    .websiteBox .hint {
+        font-size: 1.1rem;
+    }
+    .websiteBox .websitesButtons {
+        margin-top: 50px;
+    }
+}

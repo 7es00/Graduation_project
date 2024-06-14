@@ -1,0 +1,74 @@
+
+/* ************************************************************************ navBar ***************************************************************** */
+
+.heroSection .navbar{
+    width: 70px;
+    height: 100%;
+    box-shadow: 0 0px 5px 0px rgba(0, 0, 0, 0.3);
+    background-color: var(--sec_bgc);
+}
+
+.heroSection .navbar .container-fluid .logo {
+    width: 100px;
+    height: auto;
+    margin-top: 30px;
+}
+.heroSection .navbar .container-fluid .logo img {
+    width: 80%;
+    height: 80%;
+    margin: 5px;
+}
+.heroSection .navbar .links {
+    height: 70%;
+    top: 10%;
+    font-size: 1.5em;
+    flex-direction: column;
+} 
+.heroSection .navbar .links a,
+.heroSection .navbar  .mods span {
+    position: relative;
+    transition: .3s;
+    padding: 0 5px ;
+    border-radius: 50%;
+    fill: var(--muted_col);
+    z-index: var(--max_Z_Index);
+    background-color: transparent;
+}   
+.heroSection .navbar  .mods span {
+    padding: 0;
+}
+.heroSection .navbar .links a::after ,
+.heroSection .navbar .links a.active::after ,
+.heroSection .navbar  .mods span::after {
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    transition: .3s;
+    z-index: var(--low_Z_Index);  
+}
+.heroSection .navbar .links a:hover,
+.heroSection .navbar .links a.active{
+    fill: var(--pri_col);
+    fill: white;
+}
+.heroSection .navbar .links a:hover::after,
+.heroSection .navbar .links a.active::after,
+.heroSection .navbar  .mods span:hover::after {
+    background-color: var(--colored-bgc);
+    box-shadow: 0 0px 5px 0px rgba(0, 0, 0, 0.5);
+    transform: scale(1.5);
+}
+.heroSection .navbar .mods {
+    height: 0px;
+    top: 85%;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+.heroSection .navbar .mods svg {
+    padding: 5px 5px !important; 
+}
+/* ********************************************************************** end navBar ***************************************************************** */

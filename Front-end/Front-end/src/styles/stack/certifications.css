@@ -1,0 +1,38 @@
+/* ------------------------------------------------------------------------------- certifcation start ---------------------------------------------------------------------------------- */
+.CertificationSwiper {
+    position: relative;
+    padding-bottom: 30px;
+}
+.certificationDescription .CertificationPayment {
+    font-size: 3em;
+    margin: 10px auto;
+}
+.certifcationSection .certificationDetails {
+    font-size: 1.4em;
+    max-width: 90%;
+    margin-bottom: 30px;
+    color: var(--muted_col);
+}
+.certifcationSection .certificationBox .swiper-container {
+    height: 30vh;
+} 
+.certifcationSection .certificationBox .swiper-container .swiper-slide a {
+    position: relative;
+    width: 95%;
+    height: 100%;
+    overflow: hidden;
+    display: block;
+    outline: none;
+} 
+.certifcationSection .certificationBox .swiper-container .swiper-slide a img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: .8s;
+    border-radius: 20px;
+
+} 
+.certifcationSection .certificationBox .swiper-container .swiper-slide a:hover img {
+    transform: scale(1.3);
+}
+/* ------------------------------------------------------------------------------- certifcation end ---------------------------------------------------------------------------------- */

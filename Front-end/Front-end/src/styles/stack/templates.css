@@ -1,0 +1,15 @@
+.Templates {
+    overflow: hidden;
+}
+.Templates .TemplateContent .templateHeader {
+    background-color: var(--gray_bgc);
+}
+.Templates .TemplateContent .templateHeader .nav-item .nav-link {
+    color: var(--pri_col);
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+.Templates .TemplateContent .templateHeader .nav-item .nav-link.active {
+    color: white;
+    background-color: var(--colored-bgc);
+}

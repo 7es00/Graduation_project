@@ -1,0 +1,403 @@
+
+/*                                                                     main form and mods                                                                          */
+.form_sec {
+    position: relative;
+    min-height: 90vh;
+    border-radius: 50px;   
+    overflow: hidden;
+}
+.form_sec::before {
+    content: "";
+    position: absolute;
+    top: -1000px;
+    right: -1250px;
+    width: 2000px;
+    height: 2000px;
+    border-radius: 50%;
+    background: var(--colored-bgc);
+    transition: 2s;
+    z-index: 999;
+}
+.form_sec.sign_in_mod::before{
+    transform: translate(-1940px,0px );
+}
+.form_sec.sign_in_mod .sign_up form{
+    opacity: 0;
+    transition: .5s;
+    z-index: -1;
+}
+.form_sec.sign_up_mod .sign_in form{
+    z-index: -1;
+    opacity: 0;
+    transition: .5s;
+}
+.form_sec.sign_up_mod .sign_up .left_panel{
+    transform: scale(0);
+    z-index: 0;
+}
+.form_sec.sign_in_mod .sign_in .right_panel {
+    transform: scale(0);
+    z-index: 0;
+}
+
+/*                                                                  sign-up and sign-in                                                                             */
+.signForm form {
+    flex-direction: column;
+    padding-bottom: 20px;
+}
+.signForm form .sign_header {
+    font-weight: 700;
+    margin: 25px auto;
+    font-size: 2.5em;
+    color: var(--pri_col);
+}
+.signForm form .input {
+    position: relative;
+    width: 70%;
+    height: 100px;
+    margin: 10px ;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* flex-direction: column; */
+}
+.signForm  form .input label {
+    position: absolute;
+    font-size: 1.2em;
+    color: var(--pri_col);
+    transition: .3s;
+    z-index: 99;
+    padding: 0 10px;
+    text-transform: capitalize;
+    left: 50%;
+    top: 50%;
+    width: 65%;
+    text-align: center;
+    transform: translate(-50% , -50%);
+
+}
+.signForm  form .input input {
+    position: relative;
+    width: 100%;
+    height: 60px;
+    font-size: 1em;
+    transition: .5s;
+    text-align: center;
+    border-radius: 15px;
+    padding: 0 40px;
+    outline: none;
+    color: var(--muted_col);
+    border: 2px solid #E8EDED; 
+    background-color: var(--sec_bgc);
+    
+}
+.signForm form input:focus{
+    border: 1px solid var(--colored-bgc);
+}
+.signForm form input:focus~label {
+    color: var(--sec_col);
+}
+.signForm form input:focus~label,
+.signForm form input:valid~label{
+    font-size: 1em;
+    padding: 0px 20px;
+    top: 20px;
+    border-radius: 50px;
+    background-color: var(--sec_bgc);
+    border: 1px solid var(--colored-bgc);
+    color: var(--colored-bgc);
+}
+.signForm form .input .icon,
+.signForm form .input .eye {
+    position: absolute;
+    width: 30px;
+    height: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0%;
+    margin-left: 10px;
+    font-size: 1.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--pri_col);
+    background-color: var(--sec_bgc);
+    padding: 5px;
+}
+.signForm form .input .eye{
+    left: calc(90% - 15px);
+    cursor: pointer;
+    fill: white;
+}
+
+.signForm form .submit {
+    padding: 10px 40px;
+    border-radius: 50px;
+    color: var(--pri_col);
+    font-size: 1.1em;
+    transition: .4s;
+    outline: none;
+    border: 1px solid var(--colored-bgc);
+    background-color: var(--sec_bgc);
+}
+.signForm form .submit:hover {
+    color: white;
+    transform: scale(1.2);
+    background: var(--colored-bgc);
+}
+.sign_in form .reset {
+    padding: 20px;
+    font-size: 1.1em;
+    color: var(--muted_col);
+}
+.sign_in form .reset a {
+    position: relative;
+    color: var(--colored);
+    padding: 20px 5px 10px;
+    text-decoration: none;
+}
+.sign_in form .reset a::before {
+    content: "";
+    position: absolute;
+    width: 0px;
+    height: 2px;
+    bottom: 0;
+    left: 10%;
+    transition: .5s;
+    background-color: var(--colored-bgc);
+}
+.sign_in form .reset a:hover:before {
+    width: 85%;
+}
+
+/*                                                                   panel                                                                              */
+.panel {
+    position: absolute;
+    top: 10%;
+    left: 55%;
+    width: 40%;
+    height: 100%;
+    font-size: 1.2em;
+    display: flex;
+    align-items: center;
+    text-align:  center;
+    flex-direction: column;
+    z-index: 9999;
+    color: white;
+
+}
+.panel h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+.panel p {
+    margin: 50px auto;
+}
+.panel .panel_btns {
+    width: 150px;
+    height: 50px;
+    outline: none;
+    border: 1px solid var(--colored-bgc);
+    border-radius: 50px;
+    font-size: 1.1em;
+    transition: .5s;
+    z-index: 999;
+    background-color: var(--sec_bgc);
+    color: var(--pri_col);
+}
+.panel .panel_btns:hover {
+    transform: scale(1.2);
+}
+.panel.left_panel {
+    left: 50px;
+    opacity: 1;
+    z-index: 9999;
+}
+.form_sec.sign_in_mod .sign_up .left_panel {
+    transform: scale(1);
+    z-index: 9999;
+    transition: 1s;
+    transition-delay: 1.5s;
+}
+.form_sec.sign_up_mod .sign_in .right_panel {
+    transform: scale(1);
+    z-index: 9000;
+    transition: 1s;
+    transition-delay: 1.2s;
+}
+.panel img {
+    position: absolute;
+    width: 100%;
+    height: 400px;
+    bottom: 5%;
+    right: 10%;
+    opacity: 1;
+}
+
+/*                                                                 end panel                                                                              */
+
+/*                                                                  responsive                                                                             */
+@media screen and (min-width: 1200px) and (max-width : 1400px ) {
+    .form_sec::before {
+        top: -1000px;
+        right: -1400px;
+    }
+    .signForm form .input .eye{
+        left: calc(90% - 15px);
+    }
+    .signForm  form .input label {
+        font-size: 1rem;
+    }
+}
+@media screen and (min-width: 992px) and (max-width : 1199px ) {
+    .form_sec::before {
+        right: -1475px;
+    }
+    .signForm  form .input input {
+        width: 100%;
+    }
+    .signForm  form .input {
+        width: 80%;
+    }
+    .signForm  form .input label {
+        font-size: 1rem;
+    }
+    .signForm .sign_in form  {
+        margin-left: 30px;
+    }
+    .signForm  form input:focus~label,
+    .signForm  form input:valid~label{
+        font-size: .8rem;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width : 991px ) { 
+    .signForm  form {
+        padding:0 ;
+        margin-right: 20px;
+    }
+    .signForm .sign_in form {
+        align-items: flex-end;
+        margin-left: 10px;
+    }
+    .signForm  form .input {
+        width: 80%;
+    }
+    .signForm  form .input label {
+        font-size: .7rem;
+    }
+    .signForm  form input:focus~label,
+    .signForm  form input:valid~label{
+        font-size: .8rem;
+        padding: 0px 0px;
+    }
+    .signForm form .input .icon,
+    .signForm form .input .eye{
+        width: 25px;
+    }
+    .signForm form .input .eye{
+        left: calc(90% - 17px);
+    }
+    form .submit {
+        margin: 0 auto;
+    }
+    .signForm .sign_in form  {
+        margin-left: 30px;
+    }
+    .form_sec::before {
+        right: -1590px;
+    }
+    .panel {
+        left: 60%;
+        width: 35%;
+        font-size: 1em;
+    }
+    .panel.left_panel{
+        left: 20px;
+    }
+    .panel img {
+        height: 300px;
+    }
+}
+@media (max-width : 767px) {
+    .form_sec  {
+        min-height: 100vh;
+    }
+    .signForm form {
+        width: 100%;
+        left: 50%;
+        transform: translate(-50%);
+    }
+    .form_sec::before {
+        display: none;
+    }
+    .signForm form .input{
+        height: 90px;
+    }
+    .signForm form .input .eye{
+        left: calc(90% - 15px);
+    }
+    .sign_up , .sign_in  {
+        display: flex;
+        flex-direction: column;
+    }
+    .panel {
+        position: relative;
+        left: 0 !important;
+        width: 100%;
+        height: 50px;
+        margin: 0;
+        padding: 0;
+    }
+    .panel h1 {
+        display: none;
+    }
+    .panel p {
+        display: none;
+    }
+    .panel img {
+        display: none;
+    }
+    .panel .panel_btns {
+        position: absolute;
+        top: 0;
+        border: 1px solid var(--colored-bgc);
+        background-color: var(--colored-bgc);
+        font-size:  .8em;
+    }
+    .panel .panel_btns:hover {
+        color: var(--sec_col);
+        background-color: var(--pri_bgc);
+    }
+    .signForm form input:focus~label,
+    .signForm form input:valid~label{
+        top: 15px;
+    }
+}
+@media (max-width : 576px) {
+    .signForm  form .input {
+        width: 90%;
+    }
+    .signForm form .input .icon,
+    .signForm form .input .eye{
+        width: 25px;
+    }
+    .signForm form .input .eye{
+        left: calc(90% - 15px);
+    }
+    .signForm  form .input label {
+        font-size: .9rem;
+        margin: 0 0px;
+    }
+
+    .sign_in form .reset {
+        padding: 20px;
+        font-size: 1em;
+        color: var(--muted_col);
+    }
+    .signForm form input:focus~label,
+    .signForm form input:valid~label{
+        font-size: .7rem;
+    }
+}

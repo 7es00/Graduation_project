@@ -1,0 +1,139 @@
+/************************************************************************** buddy ********************************************************************/
+/* home */
+.buddy {
+    flex-direction: column;
+}
+.buddy .buddyContainer .buddyHeader {
+    margin-bottom: 20px;
+    color: var(--muted_col);
+}
+.buddy .buddyContainer .buddyHeader .buddyLogo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    font-size: 4.5em;
+    fill: white;
+    background-color: black;
+    margin: 0px 40px 0px;
+}
+.buddy .buddyContainer .buddyHeader.details {
+    font-size: 1.2em;
+    text-align: center;
+    text-transform: capitalize;
+}
+.buddy .buddyContainer .buddyHeader h1 {
+    font-size: 2rem;
+    text-align: center;
+}
+.buddy .chatForm {
+    width: 100%;
+    height: 85vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    transition: .5s;
+}
+.buddy .chatForm .answer-container {
+    width: 80%;
+    height: 100vh;
+    background-color: var(--pri_bgc);
+    overflow: auto;
+    scrollbar-width: none;
+    padding: 20px ;
+}
+.buddy .chatForm .answer-container .answer-box {
+    margin: 0px auto 30px;
+    font-weight: 300;
+    color: var(--pri_col);
+    font-size: 1.2rem;
+    
+}
+.buddy .chatForm .answer-container .answer-box .talker {
+    font-weight: 500;
+    text-transform: uppercase;
+    border: 1px solid rgba(0, 0, 0, 0.274);
+    padding: 5px 5px 10px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+.dark-mode .buddy .chatForm .answer-container .answer-box .talker {
+    background: white;
+}
+.buddy .chatForm .answer-container .answer-box .question {
+    color: var(--muted_col);
+    font-size: 1.3rem;
+}
+.buddy .chatForm .input  {
+    position: relative;
+    width: 80%;
+    height: 75px;
+    font-size: 1.5em;
+    margin: 20px auto;
+}
+.form .input input {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    padding: 0 60px 0 30px ;
+    outline: none;
+    border: 1px solid var(--pri_col);
+    font-size: .8em;
+    text-align: start;
+    color: var(--pri_col);
+    background-color: var(--pri_bgc);
+}
+.form .input i {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 50%;
+    right: 0;
+    text-align: center;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+@media (max-width : 1200px) {
+    .buddy .chatForm .answer-container,
+    .buddy .chatForm .input {
+        width: 90%;
+    }
+}
+@media screen  and (max-width: 576px) {
+    .buddy .buddyContainer .details{
+        font-size: .8rem ;
+    }
+    .buddy .chatForm .answer-container,
+    .buddy .chatForm .input {
+        width: 90%;
+        font-size: 1em;
+    }
+    .buddy .chatForm .answer-container .answer-box {
+        font-size: 1rem;
+    }
+    .buddy .chatForm .answer-container .answer-box .question {
+        color: var(--muted_col);
+        font-size: 1.1rem;
+    }
+}
+@media screen  and (max-width: 480px) {
+    .buddy .buddyContainer .buddyHeader .buddyLogo {
+        width: 50px;
+        height: 50px;
+        font-size: 3em;
+        margin: 0px 20px 0px;
+    }
+    .buddy .buddyContainer .details {
+        font-size: .7rem;
+    }
+    .buddy .buddyContainer .buddyHeader h1 {
+        font-size: 1.3rem;
+    }
+    .buddy .chatForm .answer-container .answer-box {
+        margin: 0 auto;
+    }
+}
+/************************************************************************** end buddy ********************************************************************/
