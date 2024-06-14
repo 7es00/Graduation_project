@@ -1,0 +1,28 @@
+Create database  called roadmap
+import Database to roadmap
+
+--back-end--
+open comand prompt
+composer global require "laravel/installer=~1.1"
+go to env file in project
+Change  DB_USERNAME AND DB_PASSWORD to your database username and pass
+open project vs code, open command prompt > "php artisan serve"
+
+Open localhost:port  
+
+Backend documentation 
+http://localhost:port/admin > to get access to Admin dashboard "edit,update,delete database data"
+http://localhost:port/api/stacks
+http://localhost:port/api/stacks/1
+http://localhost:port/api/technologies/1
+http://localhost:port/api/technologies/1/videos
+--------------------------------
+Front end
+install nodejs
+
+Open front-end project command prompt 
+Install npm
+npm start 
+open localhost npm will create
+
+
